@@ -2,12 +2,13 @@ import time
 import pickle
 import datetime
 
-def time_convert(sec):
-  mins = sec // 60
-  sec = sec % 60
-  hours = mins // 60
-  mins = mins % 60
-  print("Time Lapsed = {0}:{1}:{2}".format(int(hours),int(mins),sec))
+# stopwatch
+#def time_convert(sec):
+#  mins = sec // 60
+#  sec = sec % 60
+#  hours = mins // 60
+#  mins = mins % 60
+#  print("Time Lapsed = {0}:{1}:{2}".format(int(hours),int(mins),sec))
 
 #input("Press Enter to start")
 #start_time = time.time()
@@ -51,7 +52,6 @@ Strojno_parts = 10
 
 infile = open(filename, 'rb')
 subject_status_loaded = pickle.load(infile)
-#print(subject_status_loaded)
 
 sklekovi = 0
 
@@ -97,12 +97,6 @@ def update(subject, com, number):
     pickle.dump(subjects_status, outfile)
     outfile.close
 
-
-#subjects_status = {'APR' : 0, 'NASP' : 0, 'Strojno' : 0}
-#filename = "save"
-#outfile = open(filename, 'wb')
-#pickle.dump(subjects_status, outfile)
-#outfile.close 
 
 print("\n\nCommands: refresh = 'r', Update = 'update APR add 1' or 'update APR sub 1', exit = 'exit'")
 command = ""
