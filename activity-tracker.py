@@ -68,6 +68,7 @@ def tracker():
     APR_perc = APR_done*100 // APR_parts
     NASP_perc = NASP_done*100 // NASP_parts
     Strojno_perc = Strojno_done*100 // Strojno_parts
+    Total_perc = (APR_done + NASP_done + Strojno_done)*100 / (APR_parts + NASP_parts + Strojno_parts)
 
     print("Subject completion status:")
     print("APR:       " + str(APR_done) + "/" + str(APR_parts) + "   " + str(APR_perc) + "%" + "   ", end="")
@@ -79,9 +80,11 @@ def tracker():
     print("Strojno:   " + str(Strojno_done) + "/" + str(Strojno_parts) + "  " + str(Strojno_perc) + "%" + "   ", end="")
     progress_bar(Strojno_perc)
 
-    print("\nDays left until you must be 75% ready: " + str(until_ready) + "   ", end="")
+    print("\nTotal completion: " + str(Total_perc) + "%")
+
+    print("\nDays left until you must be 75% ready: " + str(until_ready) + "   " + str(until_ready_perc) + "%" + "   ", end="")
     progress_bar(until_ready_perc)
-    print("Days left until exams:                " + str(until_exam) + "   ", end="")
+    print("Days left until exams:                " + str(until_exam) + "   " + str(until_exam_perc) + "%" + "   ", end="")
     progress_bar(until_exam_perc)
 
 
